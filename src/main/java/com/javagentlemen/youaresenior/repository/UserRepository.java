@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
 public class UserRepository {
     private final EntityManager em;
 
+    @Transactional
     public void save(User user) {
         saveInMethod(user);
     }
 
-    @Transactional
     public void saveInMethod(User user) {
         em.persist(user);
         em.flush();
