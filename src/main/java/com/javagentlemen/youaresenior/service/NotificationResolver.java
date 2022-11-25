@@ -14,6 +14,16 @@ public class NotificationResolver {
     @Autowired
     List<Notification> notifications;
 
+    /**
+     * todo: Вопрос 2: как их заинжектить. Ответ @Qualifier.
+     * След. вопрос а без него заинжектятся - ответ ДА потому что название перепенной совпадает с именем бина. Т.е вот такое emailNotificationNEW - работать не будет
+     */
+    @Autowired
+    Notification emailNotification;
+
+    @Autowired
+    Notification smsNotification;
+
     public Notification resolveByUser(User user) {
         if (user.getId() % 2 == 0) {
             return notifications.get(0);
