@@ -8,7 +8,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public final class UserRepository {
+/**
+ * с final - работать не будет. Получим ошибку во время компиляции (Could not generate CGLIB subclass..)
+  */
+public class UserRepository {
     private final EntityManager em;
 
     @Transactional
