@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mysql:
+    image: percona/percona-server:8.0.17
+    container_name: test-db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+      - TZ=Europe/Moscow
+    ports:
+      - "3309:3306"
