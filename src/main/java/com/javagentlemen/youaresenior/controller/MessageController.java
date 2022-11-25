@@ -15,8 +15,8 @@ public class MessageController {
 
     @GetMapping
     public void send() {
-        var user1 = new User(1);
-        var user2 = new User(2);
+        var user1 = new User().setId(1);
+        var user2 = new User().setId(2);
         var notification1 = notificationResolver.resolveByUser(user1);
         var notification2 = notificationResolver.resolveByUser(user2);
 
